@@ -1,0 +1,13 @@
+[Environment]
+duration=10.000000
+seed=0
+net_name=tdma-slot_half
+sim_log_delim=TAB
+
+[Run Info]
+run_date=16:48:30 Tue Apr 20 1999
+
+[Log Entries]
+
+[Summary]
+Low-Lev.	Simulation	Error	0

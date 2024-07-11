@@ -1,0 +1,49 @@
+
+=======================================================================
+Summary:        This model demonstrates a time division multiple access 
+                (TDMA) protocol in which several nodes share a single 
+                radio channel.  
+
+Model Name:     Time Division Multiple Access (V.2) - tdma.prj
+Created on:     1/7/95
+Last Revised:   12/21/98
+=======================================================================
+
+Introduction:
+The model contains two subnetworks and a bent pipe satellite node.  A
+node within one subnet sends data to the satellite, which forwards it
+to the other subnet.  The nodes within a subnet follow the TDMA
+protocol when sharing the uplink channel to the satellite. The TDMA
+Version 2 model also fixes several bugs in the original TDMA model,
+updates the remaining OPNET 2.5 functionality, and allows for the 
+mixing of fixed, mobile, and satellite nodes.
+
+Understanding the model:
+This model uses a simulation attribute named "slot_length" that
+specifies the time length of the slots into which the channel will be
+divided.  At the beginning of the simulation, each node determines two
+values: its multiple and offset.  The multiple is the number of slots
+per channel and is the same as the number of nodes in its subnet.
+Thus each node receives an equal amount of the channel bandwidth.  The
+offset of each node is its index within the rotation of slots.  Thus
+the channel is multiplexed into slots in a round-robin service
+fashion.
+
+The satellite uses two directional antennas.  At the beginning of the
+simulation, they are pointed directly towards the node "gnd_0" within
+each subnet.  A custom rxgroup pipeline stage, bent_pipe_rxgroup, has
+been added to improve execution speed.
+
+In tdma-slot_half, "slot_length" is defined to be 0.5.  In tdma-slot_one,
+"slot_length" is defined to be 1.0.  Run simulations from the advanced editor.
+Each scenario has its own animation for viewing.
+
+To prepare the model for execution, make sure the tdma contributed model 
+directory is included in the model directories list in your env_db<rel> file.
+
+
+
+
+
+
+
