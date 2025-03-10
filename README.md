@@ -1,7 +1,14 @@
-# TDMA_Version0
-opnet_TDMA
-原版本在OPNET10.0环境下编译。重新编译之后在OPNET14.5下是可以正常使用的，它探知网络中一个节点的tx可以感知到的rx数目来决定共有多少个所谓“时隙”。之后按照节点id的顺序完成周期性发送。
 
-缺点：
-1.不支持多跳环境。这需要重新定义时隙数量并决定本节点所占用的时隙；
-2.未对数据包进行定义，no_packet_form。这需要重新自行确定包格式与目的地址。
+# TDMA_Model
+
+A simple TDMA protocol model.
+
+It detects the number of rx that a node's tx in the network can perceive to determine how many so-called "time slots" there are. The nodes are sent periodically in the order of node ids.
+
+
+## Simulation environment
+OPNET 14.5
+## Cons
+- The multi-hop environment is not supported. This requires redefining the number of time slots and determining the time slots occupied by this node.
+
+- The packet is not defined, no_packet_form. This requires you to re-determine the packet format and destination address yourself.
